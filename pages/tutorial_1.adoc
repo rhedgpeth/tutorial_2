@@ -1,0 +1,74 @@
+= Tutorial 1: Subtitle
+////
+Meta data for the page
+////
+Rob Michael Hedgpeth <robh@mariadb.com>
+v1.0.0.1, August 2020: Inital addition?
+
+:page-title: Tutorial 1
+:page-path: /tutorials
+:page-category: Tutorials
+:sourcedir: ../code
+
+This is a walk-through (by {firstname}) for setting up a Java application that uses Spring Framework and MariaDB.
+
+== Heading 1
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+* List item 1
+* List item 2
+
+== Heading 1
+
+This is a section showing off code snippets.
+
+.direct input
+[source,javascript]
+----
+let express = require("express"),
+    router = express.Router(),
+    pool = require('../db');
+
+// GET 
+router.get("/", async (req, res, next) => {
+    let conn;
+    try {
+        conn = await pool.getConnection();
+        var query = "select * from tasks";
+        var rows = await conn.query(query);
+        res.send(rows);
+    } catch (err) {
+        throw err;
+    } finally {
+        if (conn) return conn.release();
+    }
+});
+----
+
+.code block - python
+[source,python]
+----
+include::{sourcedir}/python.py[tags=test]
+----
+
+.code block - java
+[source,java]
+----
+include::{sourcedir}/java.java[tags=test]
+----
+
+== Heading 1
+
+image::https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/22130127/Pug-puppy-standing-in-profile-on-a-white-background.jpg[caption="Figure 1-{counter:figure}", title=": This is the caption of the figure"]
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+
+=== Heading 2
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+=== Heading 2
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
