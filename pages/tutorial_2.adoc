@@ -1,4 +1,4 @@
-= Tutorial 2
+= External Tutorial 2
 ////
 Meta data for the page
 ////
